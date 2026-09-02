@@ -13,5 +13,13 @@ body,
 
 body {
   margin: 0;
+  background: #ffffff;
+  color: #000000;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+html:has(.dark) body {
+  background: #1e1e1e;
+  color: #d4d4d4;
 }
 

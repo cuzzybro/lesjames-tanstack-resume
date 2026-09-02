@@ -16,6 +16,7 @@ export const resume = {
       project: 'CLR - Transformers Production Support',
       start: 'May 2026',
       end: 'Present',
+      employmentType: 'Sole trader contract',
       skills: [ 'Java', 'Springboot', 'JMeter', 'Groovy', 'IntelliJ IDEA', 'Bitbucket', 'Docker', 'Allure', 'Confluence'],
       bullets: [
         'Lead automation strategy and implementation for Host Mainframe EMAX Core Ledger Replacement',
@@ -33,6 +34,7 @@ export const resume = {
       project: 'CLR - Emax / Ancillary',
       start: 'September 2024',
       end: 'May 2026',
+      employmentType: 'Sole trader contract',
       skills: ['JMeter', 'Groovy', 'Next.js', 'Docker', 'Allure', 'Confluence'],
       bullets: [
         'Consult on, plan and implement Test Automation strategy for Host Mainframe EMAX Core Ledger Replacement',
@@ -49,6 +51,7 @@ export const resume = {
       position: 'Senior Test Engineer / Automation',
       start: 'May 2022',
       end: 'June 2024',
+      employmentType: 'Sole trader contract',
       skills: ['Playwright', 'TypeScript', 'Docker', 'Azure DevOps', 'Express', 'Postman', 'MSSQL Server'],
       bullets: [
         'Provided remote test support for surveillance applications with focus on maintaining core business systems',
@@ -66,6 +69,7 @@ export const resume = {
       position: 'Automation Test Engineer',
       start: 'November 2021',
       end: 'May 2022',
+      employmentType: 'Sole trader contract',
       skills: ['Tosca', 'Python', 'MSSQL Server', 'Oracle EBS'],
       bullets: [
         'Provided automation engineering support for Oracle EBS upgrade project (FPIM)',
@@ -82,6 +86,7 @@ export const resume = {
       position: 'Automation Test Engineer',
       start: 'October 2019',
       end: 'November 2021',
+      employmentType: 'Sole trader contract',
       skills: ['Playwright', 'TypeScript', 'Python', 'Java', 'Jenkins', 'Allure', 'Git'],
       bullets: [
         'Led automation delivery on train releases with 2-4 week cycle cadence',
@@ -99,6 +104,7 @@ export const resume = {
       position: 'Senior Test Specialist',
       start: 'August 2016',
       end: 'October 2019',
+      employmentType: 'Employee to sole trader contract',
       skills: ['Tosca', 'Selenium', 'Java', 'JIRA Cloud', 'Power BI', 'Selenide'],
       bullets: [
         'Led technical test support throughout discovery, execution and delivery phases for Aspiring Integrity fuel card system upgrade',
@@ -113,9 +119,11 @@ export const resume = {
     },
     {
       company: 'Ministry of Social Development',
-      position: 'Senior Test Analyst',
-      start: '2007',
+      position: 'Multiple QA and testing roles',
+      start: '2003',
       end: '2016',
+      employmentType: 'Permanent employee',
+      careerNote: 'Several roles across a long-term permanent employment period',
       skills: ['Tosca', 'JIRA Cloud', 'Test Management', 'Agile/Scrum'],
       bullets: [
         'Led QA efforts across multiple transformation projects: MyMSD, Welfare Reform 3, CMS Phase 1a',
