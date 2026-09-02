@@ -1,12 +1,9 @@
-import { createFileRoute } from '@tanstack/react-router'
 import resume from '../data/resume'
-import { Header } from '../components/Header'
-import Section from '../components/Section'
-import { ExperienceCarousel } from '../components/ExperienceCarousel'
+import { Header } from './Header'
+import Section from './Section'
+import { ExperienceCarousel } from './ExperienceCarousel'
 
-export const Route = createFileRoute('/resume')({ component: Resume })
-
-function Resume() {
+export function Resume() {
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <Header data={resume} />

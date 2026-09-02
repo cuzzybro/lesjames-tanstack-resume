@@ -25,8 +25,21 @@ export const Route = createRootRoute({
       },
     ],
   }),
+  notFoundComponent: NotFound,
   shellComponent: RootDocument,
 })
+
+function NotFound() {
+  return (
+    <main className="min-h-screen flex flex-col items-center justify-center px-6 text-center text-slate-900">
+      <h1 className="text-4xl font-bold">Page not found</h1>
+      <p className="mt-3 text-slate-600">The page you requested does not exist.</p>
+      <a className="mt-6 text-indigo-600 font-semibold hover:text-indigo-800" href="/">
+        Return to resume
+      </a>
+    </main>
+  )
+}
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
