@@ -4,9 +4,9 @@ export function ExperienceItem({ item }: { item: { company: string; position: st
       <div className="flex items-baseline justify-between gap-4 mb-2 border-b-2 border-[#005fb8] pb-2 dark:border-[#3e3e42]">
         <div className="flex-1">
           <div className="font-bold text-lg text-black dark:text-[#d4d4d4]">{item.position}</div>
-          <div className="text-indigo-600 font-semibold">{item.company}</div>
+          <div className="font-semibold text-[#005a9e] dark:text-[#569cd6]">{item.company}</div>
           {item.project && (
-            <div className="text-sm text-slate-500">
+            <div className="text-sm text-black dark:text-[#9d9d9d]">
               {item.project}
             </div>
           )}
@@ -23,7 +23,7 @@ export function ExperienceItem({ item }: { item: { company: string; position: st
       <ul className="mt-3 space-y-1 text-black dark:text-[#d4d4d4]">
         {item.bullets.map((b, i) => (
           <li key={i} className="flex gap-3">
-            <span className="text-indigo-400 shrink-0 mt-1">•</span>
+            <span className="shrink-0 mt-1 text-[#005a9e] dark:text-[#569cd6]">•</span>
             <span className="text-sm">{b}</span>
           </li>
         ))}

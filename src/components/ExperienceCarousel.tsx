@@ -63,15 +63,18 @@ export function ExperienceCarousel({ items }: { items: Experience[] }) {
           aria-label={`View details for ${currentExperience.company}`}
         >
           <div className="flex min-h-40 flex-col justify-center">
-            <div className="text-sm font-semibold uppercase tracking-wide text-indigo-600">
-              {currentExperience.company}
+            <div className="flex items-baseline justify-between gap-4">
+                <div className="text-lg font-semibold uppercase tracking-wide text-[#005a9e] dark:text-[#569cd6]">
+                {currentExperience.company}
+                </div>
+                <div className="mt-3 text-sm font-bold text-black dark:text-[#d4d4d4]">
+                {currentExperience.position}
+                </div>
             </div>
             {currentExperience.project && (
               <div className="mt-2 text-sm text-black dark:text-[#9d9d9d]">{currentExperience.project}</div>
             )}
-            <div className="mt-3 text-2xl font-bold text-black dark:text-[#d4d4d4]">
-              {currentExperience.position}
-            </div>
+
             <div className="mt-2 text-sm text-black dark:text-[#9d9d9d]">
               {currentExperience.start} — {currentExperience.end}
             </div>
@@ -80,7 +83,7 @@ export function ExperienceCarousel({ items }: { items: Experience[] }) {
                 {currentExperience.employmentType}
               </div>
             )}
-            <div className="mt-6 text-sm font-semibold text-indigo-600 opacity-0 transition-opacity group-hover:opacity-100 group-focus:opacity-100">
+            <div className="mt-6 text-sm font-semibold text-[#005a9e] opacity-0 transition-opacity group-hover:opacity-100 group-focus:opacity-100 dark:text-[#569cd6]">
               Click to view engagement details
             </div>
           </div>

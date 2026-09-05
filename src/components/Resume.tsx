@@ -39,7 +39,7 @@ export function Resume() {
           <div className="space-y-6">
             {Object.entries(resume.skills).map(([category, skills]) => (
               <div key={category}>
-                <h3 className="font-semibold text-slate-900 mb-2">{category}</h3>
+                <h3 className="font-semibold text-slate-900 dark:text-blue-300 mb-2">{category}</h3>
                 <div className="flex flex-wrap gap-2">
                   {skills.map((skill) => (
                     <span

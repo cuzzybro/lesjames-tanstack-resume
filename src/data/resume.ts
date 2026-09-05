@@ -2,7 +2,7 @@ export const resume = {
   name: 'Leslie T. James',
   role: 'Senior Test Engineer / Automation',
   summary:
-    "Results-driven Senior Test Engineer with 15+ years of QA and automation expertise. Specializing in test automation strategy, frameworks, and solutions across complex enterprise systems. Proven track record building and maintaining regression test suites, implementing automation best practices, and leading teams through digital transformation projects.",
+    'Curious and technology-focused Senior Test Engineer with a practical, problem-solving mindset and approximately 15 years of QA experience across both permanent employment and contract engagements in the public and private sectors. My broad career journey, spanning engineering, operations, community service, security, support, case management, and software testing, has built the adaptability, empathy, and persistence I bring to complex technology challenges. I specialise in test automation strategy, frameworks, and solutions for enterprise systems.',
   contact: {
     email: 'lesjames_nz@hotmail.com',
     phone: '+64 21 567 127',

@@ -29,7 +29,7 @@ export function Header({
           <div className="shrink-0">
             <div className="flex h-32 w-32 items-center justify-center rounded-full border-4 border-[#005fb8] bg-white dark:border-[#264f78] dark:from-[#252526] dark:to-[#1e1e1e]">
               <svg
-                className="w-16 h-16 text-indigo-400"
+                className="w-16 h-16 text-[#005a9e] dark:text-[#569cd6]"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -38,20 +38,20 @@ export function Header({
             </div>
           </div>
 
-          <div className="flex-1">
-            <h1 className="text-4xl font-bold text-black dark:text-[#d4d4d4]">{data.name}</h1>
-            <p className="text-lg text-indigo-600 font-semibold mt-1">{data.role}</p>
+          <div id="name-and-role" className="flex-1 text-[#000000] dark:text-[#d4d4d4]">
+            <h1 className="text-4xl font-bold text-[#000000] dark:text-[#d4d4d4]">{data.name}</h1>
+            <p className="text-lg font-semibold text-[#005a9e] mt-1 dark:text-[#569cd6]">{data.role}</p>
           </div>
         </div>
 
-        <div className="space-y-1 text-sm text-black dark:text-[#9d9d9d] sm:text-right">
+        <div id="contact-info" className="space-y-1 text-sm font-medium text-[#000000] dark:text-[#9d9d9d] sm:text-right">
           {data.contact.email && <div>{data.contact.email}</div>}
           {data.contact.phone && <div>{data.contact.phone}</div>}
           {data.contact.location && <div>{data.contact.location}</div>}
           {data.contact.license && <div className="text-[#005a9e] dark:text-[#6a9955]">{data.contact.license}</div>}
         </div>
       </div>
-      <p className="mt-6 max-w-3xl leading-relaxed text-black dark:text-[#d4d4d4]">{data.summary}</p>
+      <p id="summary" className="mt-6 max-w-3xl font-medium leading-relaxed text-[#000000] dark:text-[#d4d4d4]">{data.summary}</p>
     </header>
   )
 }
