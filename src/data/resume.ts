@@ -4,8 +4,6 @@ export const resume = {
   summary:
     'Curious and technology-focused Senior Test Engineer with a practical, problem-solving mindset and approximately 15 years of QA experience across both permanent employment and contract engagements in the public and private sectors. My broad career journey, spanning engineering, operations, community service, security, support, case management, and software testing, has built the adaptability, empathy, and persistence I bring to complex technology challenges. I specialise in test automation strategy, frameworks, and solutions for enterprise systems.',
   contact: {
-    email: 'lesjames_nz@hotmail.com',
-    phone: '+64 21 567 127',
     location: 'New Zealand',
     license: 'NZ Drivers License (Full)',
   },
@@ -204,14 +202,11 @@ export const resume = {
       name: 'Livi Ah hoi',
       company: 'Volpara - Wellington',
       title: 'ICT Testing Services Practice Manager',
-      phone: '+64 27 406 0508',
-      office: '+64 4 498 0237',
     },
     {
       name: 'Ioe Misa',
       company: 'Ministry of Social Development - Wellington',
       title: 'Testing Resource Manager',
-      phone: '+64 29 200 3446',
     },
   ],
 }

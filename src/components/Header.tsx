@@ -4,14 +4,23 @@ export function Header({
   data,
   isDarkMode,
   onToggleTheme,
+  onContact,
 }: {
   data: Resume
   isDarkMode: boolean
   onToggleTheme: () => void
+  onContact: () => void
 }) {
   return (
     <header className="mx-auto max-w-4xl border-b-2 border-[#005fb8] px-6 py-8 dark:border-[#3e3e42]">
       <div className="mb-6 flex justify-end">
+        <button
+          type="button"
+          onClick={onContact}
+          className="mr-3 inline-flex items-center rounded-full border border-[#005fb8] px-3 py-2 text-sm font-semibold text-black transition hover:bg-[#e5f1fb] focus:outline-none focus:ring-2 focus:ring-[#007acc] dark:border-[#3e3e42] dark:text-[#d4d4d4] dark:hover:bg-[#2d2d30]"
+        >
+          Contact me
+        </button>
         <button
           type="button"
           onClick={onToggleTheme}
@@ -45,8 +54,6 @@ export function Header({
         </div>
 
         <div id="contact-info" className="space-y-1 text-sm font-medium text-[#000000] dark:text-[#9d9d9d] sm:text-right">
-          {data.contact.email && <div>{data.contact.email}</div>}
-          {data.contact.phone && <div>{data.contact.phone}</div>}
           {data.contact.location && <div>{data.contact.location}</div>}
           {data.contact.license && <div className="text-[#005a9e] dark:text-[#6a9955]">{data.contact.license}</div>}
         </div>

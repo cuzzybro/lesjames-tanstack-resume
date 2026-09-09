@@ -3,9 +3,11 @@ import resume from '../data/resume'
 import { Header } from './Header'
 import Section from './Section'
 import { ExperienceCarousel } from './ExperienceCarousel'
+import ContactModal from './ContactModal'
 
 export function Resume() {
   const [isDarkMode, setIsDarkMode] = useState(false)
+  const [isContactOpen, setIsContactOpen] = useState(false)
 
   useEffect(() => {
     const savedTheme = window.localStorage.getItem('resume-theme')
@@ -25,6 +27,7 @@ export function Resume() {
         data={resume}
         isDarkMode={isDarkMode}
         onToggleTheme={() => setIsDarkMode((current) => !current)}
+        onContact={() => setIsContactOpen(true)}
       />
 
       <main className="max-w-4xl mx-auto px-6 py-8 space-y-8">
@@ -61,6 +64,8 @@ export function Resume() {
           </p>
         </Section>
       </main>
+
+      {isContactOpen && <ContactModal onClose={() => setIsContactOpen(false)} />}
     </div>
   )
 }
