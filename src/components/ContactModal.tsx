@@ -3,10 +3,13 @@ import { useEffect, useState } from 'react'
 const contactApiUrl =
   import.meta.env.VITE_CONTACT_API_URL ?? 'https://personal-resume-backend.vercel.app/api/contact'
 
+const MAX_MESSAGE_LENGTH = 1000
+
 export function ContactModal({ onClose }: { onClose: () => void }) {
   const [isSending, setIsSending] = useState(false)
   const [serverMessage, setServerMessage] = useState('')
   const [isSuccess, setIsSuccess] = useState(false)
+  const [messageCount, setMessageCount] = useState(0)
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -24,11 +27,12 @@ export function ContactModal({ onClose }: { onClose: () => void }) {
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
+    const form = event.currentTarget
     setIsSending(true)
     setServerMessage('')
     setIsSuccess(false)
 
-    const formData = new FormData(event.currentTarget)
+    const formData = new FormData(form)
     const payload = {
       name: String(formData.get('name') || '').trim(),
       email: String(formData.get('email') || '').trim(),
@@ -60,7 +64,10 @@ export function ContactModal({ onClose }: { onClose: () => void }) {
 
       setIsSuccess(true)
       setServerMessage('Thanks — your message has been sent.')
-      event.currentTarget.reset()
+      form.reset()
+      window.setTimeout(() => {
+        onClose()
+      }, 1200)
     } catch (error) {
       setIsSuccess(false)
       setServerMessage(error instanceof Error ? error.message : 'Something went wrong.')
@@ -136,8 +143,13 @@ export function ContactModal({ onClose }: { onClose: () => void }) {
               name="message"
               rows={5}
               required
+              maxLength={MAX_MESSAGE_LENGTH}
+              onChange={(event) => setMessageCount(event.target.value.length)}
               className="mt-1 block w-full resize-y rounded border border-[#888] bg-white px-3 py-2 font-normal text-black outline-none focus:border-[#007acc] focus:ring-2 focus:ring-[#007acc]/30 dark:border-[#666] dark:bg-[#1e1e1e] dark:text-[#d4d4d4]"
             />
+            <div className="mt-1 flex justify-end text-xs text-[#444] dark:text-[#9d9d9d]">
+              <span>{messageCount}/{MAX_MESSAGE_LENGTH}</span>
+            </div>
           </label>
 
           {serverMessage && (
