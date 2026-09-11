@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 
-const contactMailbox = String.fromCharCode(
-  108, 101, 115, 106, 97, 109, 101, 115, 95, 110, 122, 64, 104, 111, 116, 109, 97, 105, 108, 46, 99, 111, 109,
-)
+const contactApiUrl =
+  import.meta.env.VITE_CONTACT_API_URL ?? 'https://personal-resume-backend.vercel.app/api/contact'
 
 export function ContactModal({ onClose }: { onClose: () => void }) {
   const [isSending, setIsSending] = useState(false)
+  const [serverMessage, setServerMessage] = useState('')
+  const [isSuccess, setIsSuccess] = useState(false)
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -21,19 +22,51 @@ export function ContactModal({ onClose }: { onClose: () => void }) {
     }
   }, [onClose])
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
     setIsSending(true)
+    setServerMessage('')
+    setIsSuccess(false)
 
     const formData = new FormData(event.currentTarget)
-    const name = String(formData.get('name') || '')
-    const email = String(formData.get('email') || '')
-    const message = String(formData.get('message') || '')
-    const subject = `Resume enquiry from ${name}`
-    const body = `Name: ${name}\nReply email: ${email}\n\n${message}`
+    const payload = {
+      name: String(formData.get('name') || '').trim(),
+      email: String(formData.get('email') || '').trim(),
+      message: String(formData.get('message') || '').trim(),
+      botField: String(formData.get('botField') || '').trim(),
+    }
 
-    window.location.href = `mailto:${contactMailbox}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-    setIsSending(false)
+    if (!contactApiUrl) {
+      setIsSuccess(false)
+      setServerMessage('Contact form is not configured for this deployment.')
+      setIsSending(false)
+      return
+    }
+
+    try {
+      const response = await fetch(contactApiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      })
+
+      const result = (await response.json().catch(() => ({}))) as { error?: string; success?: boolean }
+
+      if (!response.ok || result.success !== true) {
+        throw new Error(result.error || 'Unable to send your message right now.')
+      }
+
+      setIsSuccess(true)
+      setServerMessage('Thanks — your message has been sent.')
+      event.currentTarget.reset()
+    } catch (error) {
+      setIsSuccess(false)
+      setServerMessage(error instanceof Error ? error.message : 'Something went wrong.')
+    } finally {
+      setIsSending(false)
+    }
   }
 
   return (
@@ -54,7 +87,7 @@ export function ContactModal({ onClose }: { onClose: () => void }) {
           <div>
             <h2 id="contact-modal-title" className="text-2xl font-bold">Contact me</h2>
             <p className="mt-2 text-sm text-[#444] dark:text-[#9d9d9d]">
-              Your email app will open with this message ready to send.
+              Send a message and I’ll receive it securely through the site backend.
             </p>
           </div>
           <button
@@ -68,6 +101,10 @@ export function ContactModal({ onClose }: { onClose: () => void }) {
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="hidden" aria-hidden="true">
+            <input type="text" name="botField" tabIndex={-1} autoComplete="off" />
+          </div>
+
           <label className="block text-sm font-semibold" htmlFor="contact-name">
             Name
             <input
@@ -103,12 +140,18 @@ export function ContactModal({ onClose }: { onClose: () => void }) {
             />
           </label>
 
+          {serverMessage && (
+            <p className={`text-sm ${isSuccess ? 'text-green-700 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
+              {serverMessage}
+            </p>
+          )}
+
           <button
             type="submit"
             disabled={isSending}
             className="w-full rounded border border-[#005fb8] bg-[#005fb8] px-4 py-2 font-semibold text-white transition hover:bg-[#004b91] focus:outline-none focus:ring-2 focus:ring-[#007acc] disabled:cursor-wait disabled:opacity-70"
           >
-            {isSending ? 'Opening email app...' : 'Open email draft'}
+            {isSending ? 'Sending...' : 'Send message'}
           </button>
         </form>
       </section>
