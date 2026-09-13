@@ -55,11 +55,11 @@ export function ExperienceCarousel({ items }: { items: Experience[] }) {
   return (
     <div className="relative">
       {/* Carousel Container */}
-      <div className="relative mx-12">
+      <div className="relative w-full">
         <button
           type="button"
           onClick={() => setSelectedExperience(currentExperience)}
-          className={experienceCardClasses()}
+          className={cn(experienceCardClasses(), 'pr-18 pl-18')}
           aria-label={`View details for ${currentExperience.company}`}
         >
           <div className="flex min-h-40 flex-col justify-center">
@@ -94,7 +94,7 @@ export function ExperienceCarousel({ items }: { items: Experience[] }) {
           type="button"
           onClick={goToPrevious}
           disabled={currentIndex === 0}
-          className={cn(iconButtonClasses(), 'absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12')}
+          className={cn(iconButtonClasses(), 'absolute left-3 top-1/2 z-10 -translate-y-1/2')}
           aria-label="Previous experience"
         >
           <svg
@@ -117,7 +117,7 @@ export function ExperienceCarousel({ items }: { items: Experience[] }) {
           type="button"
           onClick={goToNext}
           disabled={currentIndex === items.length - 1}
-          className={cn(iconButtonClasses(), 'absolute right-0 top-1/2 -translate-y-1/2 translate-x-12')}
+          className={cn(iconButtonClasses(), 'absolute right-3 top-1/2 z-10 -translate-y-1/2')}
           aria-label="Next experience"
         >
           <svg

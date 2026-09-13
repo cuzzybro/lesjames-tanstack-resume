@@ -58,7 +58,7 @@ export function Header({
           {data.contact.license && <div className="text-[#005a9e] dark:text-[#6a9955]">{data.contact.license}</div>}
         </div>
       </div>
-      <p id="summary" className="mt-6 max-w-3xl font-medium leading-relaxed text-[#000000] dark:text-[#d4d4d4]">{data.summary}</p>
+      <p id="summary" className="mt-6 w-full whitespace-pre-line font-medium leading-relaxed text-[#000000] dark:text-[#d4d4d4]">{data.summary}</p>
     </header>
   )
 }

@@ -2,7 +2,7 @@ export const resume = {
   name: 'Leslie T. James',
   role: 'Senior Test Engineer / Automation',
   summary:
-    'Curious and technology-focused Senior Test Engineer with a practical, problem-solving mindset and approximately 15 years of QA experience across both permanent employment and contract engagements in the public and private sectors. My broad career journey, spanning engineering, operations, community service, security, support, case management, and software testing, has built the adaptability, empathy, and persistence I bring to complex technology challenges. I specialise in test automation strategy, frameworks, and solutions for enterprise systems.',
+    'A seasoned QA professional with over 15 years experience, including a decade as an independent consultant delivering results for both public and private sector clients. I bring end-to-end testing expertise — from strategic consulting and proof-of-concept work through to hands-on framework build, maintenance, and execution. \r\n\r\nMy strength lies in versatility: designing and implementing automation frameworks from the ground up, maintaining JMeter performance scripts across local and remote environments, and building efficient manual testing assets that scale. \r\n\r\nEqually comfortable advising on strategy or getting into the detail of execution and reporting, I\'ve delivered across large waterfall programs and Agile/hybrid environments alike — adapting my approach to what each project actually needs, not a one-size-fits-all methodology. \r\n\r\nCurious by nature with an analytical mindset, I thrive on solving problems and finding the most effective way to deliver quality outcomes. I\'m passionate about continuous learning and staying up-to-date with the latest tools and technologies in the QA space. Change and innovation are my motivators, and I\'m always looking for opportunities to improve processes and deliver better results.',
   contact: {
     location: 'New Zealand',
     license: 'NZ Drivers License (Full)',
@@ -47,6 +47,7 @@ export const resume = {
     {
       company: 'E/S/R',
       position: 'Senior Test Engineer / Automation',
+      project: 'Surveillance Applications Test Automation',
       start: 'May 2022',
       end: 'June 2024',
       employmentType: 'Sole trader contract',
@@ -64,6 +65,8 @@ export const resume = {
     },
     {
       company: 'New Zealand Health Partnerships',
+      location: 'Remote (Auckland)',
+      project: 'Oracle EBS Upgrade (FPIM) Test Automation',
       position: 'Automation Test Engineer',
       start: 'November 2021',
       end: 'May 2022',
@@ -81,6 +84,8 @@ export const resume = {
     },
     {
       company: 'Ministry of Social Development',
+      location: 'Wellington',
+      project: 'Delivery of automation test solutions for multiple projects',
       position: 'Automation Test Engineer',
       start: 'October 2019',
       end: 'November 2021',
@@ -100,7 +105,7 @@ export const resume = {
     {
       company: 'Z Energy',
       position: 'Senior Test Specialist',
-      start: 'August 2016',
+      start: 'May 2018',
       end: 'October 2019',
       employmentType: 'Employee to sole trader contract',
       skills: ['Tosca', 'Selenium', 'Java', 'JIRA Cloud', 'Power BI', 'Selenide'],
@@ -111,6 +116,22 @@ export const resume = {
         'Implemented Selenide and custom Selenium Java frameworks for web automation',
         'Provided custom reporting using JIRA/Power-BI integration and VBA solutions',
         'Managed test effort on BAU projects with strategy, planning, execution and reporting',
+        'Championed test automation adoption and implemented strategy to reduce manual regression effort',
+        'Performed validation, E2E, and UAT testing across multiple release phases',
+      ],
+    },
+    {
+      company: 'The Testing Consultancy Ltd (TTC)',
+      position: 'Test Specialist / Automation Consultant',
+      start: '2016',
+      end: '2018',
+      employmentType: 'Sole trader contract',
+      skills: ['Tosca', 'Selenium', 'Java', 'JIRA Cloud', 'Power BI', 'Selenide'],
+      bullets: [
+        'Provided test strategy, planning, execution and reporting for multiple clients',
+        'Delivered proof-of-concept automation solutions using Tosca and Selenium',
+        'Implemented custom JIRA Defect and Test Case Management framework for multiple clients',
+        'Provided custom reporting using JIRA/Power-BI integration and VBA solutions',
         'Championed test automation adoption and implemented strategy to reduce manual regression effort',
         'Performed validation, E2E, and UAT testing across multiple release phases',
       ],

@@ -30,7 +30,7 @@ export function Resume() {
         onContact={() => setIsContactOpen(true)}
       />
 
-      <main className="max-w-4xl mx-auto px-6 py-8 space-y-8">
+      <main className="max-w-4xl mx-auto space-y-8">
         <Section title="Experience">
           <p className="mb-6 max-w-3xl text-sm leading-relaxed text-black dark:text-[#9d9d9d]">
             Permanent employee through 2018, followed by sole trader contract engagements from 2018 onward.
