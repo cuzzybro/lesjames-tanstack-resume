@@ -1,3 +1,12 @@
+import type { SocialLink } from '../utils/types'
+
+const socialLinks: SocialLink[] = [
+  { label: 'LinkedIn', href: 'https://www.linkedin.com', icon: 'linkedin' },
+  { label: 'GitHub', href: 'https://github.com', icon: 'github' },
+  { label: 'Facebook', href: 'https://www.facebook.com', icon: 'facebook' },
+  { label: 'Instagram', href: 'https://www.instagram.com', icon: 'instagram' },
+]
+
 export const resume = {
   name: 'Leslie T. James',
   role: 'Senior Test Engineer / Automation',
@@ -7,6 +16,7 @@ export const resume = {
     location: 'New Zealand',
     license: 'NZ Drivers License (Full)',
   },
+  socials: socialLinks,
   experiences: [
     {
       company: 'Bank of New Zealand',

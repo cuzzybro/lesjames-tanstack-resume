@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
-import resume from '../data/resume'
-import { Header } from './Header'
-import Section from './Section'
-import { ExperienceCarousel } from './ExperienceCarousel'
-import ContactModal from './ContactModal'
+import resume from '@/data/resume'
+import { Header } from '@/components/Header'
+import Section from '@/components/Section'
+import { ExperienceCarousel } from '@/components/ExperienceCarousel'
+import ContactModal from '@/components/ContactModal'
+import { SocialLinks } from '@/components/SocialLinks'
 
 export function Resume() {
   const [isDarkMode, setIsDarkMode] = useState(false)
@@ -64,6 +65,10 @@ export function Resume() {
           </p>
         </Section>
       </main>
+
+      <footer className="mx-auto max-w-4xl border-t-2 border-[#005fb8] px-6 py-6 dark:border-[#3e3e42]">
+        <SocialLinks links={resume.socials} />
+      </footer>
 
       {isContactOpen && <ContactModal onClose={() => setIsContactOpen(false)} />}
     </div>

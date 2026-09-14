@@ -1,4 +1,4 @@
-import type { Resume } from '../data/resume'
+import type { Resume } from '@/data/resume'
 
 export function Header({
   data,

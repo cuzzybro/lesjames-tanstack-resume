@@ -1,24 +1,13 @@
 import { useEffect, useState } from 'react'
-import ExperienceItem from './ExperienceItem'
+import ExperienceItem from '@/components/ExperienceItem'
 import {
   closeButtonClasses,
   cn,
   experienceCardClasses,
   iconButtonClasses,
   modalClasses,
-} from '../utils/tailwind'
-
-interface Experience {
-  company: string
-  position: string
-  project?: string
-  start: string
-  end: string
-  employmentType?: string
-  careerNote?: string
-  bullets: string[]
-  skills?: string[]
-}
+} from '@/utils/tailwind'
+import type { Experience } from '@/utils/types'
 
 export function ExperienceCarousel({ items }: { items: Experience[] }) {
   const [currentIndex, setCurrentIndex] = useState(0)

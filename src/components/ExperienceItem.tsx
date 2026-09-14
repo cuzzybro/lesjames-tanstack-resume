@@ -1,4 +1,6 @@
-export function ExperienceItem({ item }: { item: { company: string; position: string; start: string; end: string; employmentType?: string; skills?: string[]; bullets: string[], project?: string } }) {
+import type { Item } from '@/utils/types'
+
+export function ExperienceItem({ item }: { item: Item }) {
   return (
     <div className="pb-6 last:pb-0">
       <div className="flex items-baseline justify-between gap-4 mb-2 border-b-2 border-[#005fb8] pb-2 dark:border-[#3e3e42]">
