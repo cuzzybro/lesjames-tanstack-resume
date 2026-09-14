@@ -15,15 +15,19 @@ export const resume = {
       start: 'May 2026',
       end: 'Present',
       employmentType: 'Sole trader contract',
-      skills: [ 'Java', 'Springboot', 'JMeter', 'Groovy', 'IntelliJ IDEA', 'Bitbucket', 'Docker', 'Allure', 'Confluence'],
+      skills: [ 
+        'Java', 'Springboot', 'JMeter', 'Groovy', 'IntelliJ IDEA', 'Bitbucket', 'Docker', 'Allure', 'Confluence',
+        'Insomnia', 'AWS', 'Kafka', 'Kubernetes', 'Jenkins', 'Node.js', 'Cyberark', 'Copilot'
+      ],
       bullets: [
-        'Lead automation strategy and implementation for Host Mainframe EMAX Core Ledger Replacement',
-        'Develop and maintain automated regression suite for Cobol mainframe screens being rewritten',
-        'Build custom automation solution leveraging JMeter and Groovy with custom extensions (Blazemeter, Allure)',
-        'Develop NextJS web application to wrap JMeter and simplify script execution',
-        'Containerize solution with Docker outlook for inclusion in future build pipeline',
-        'Maintain documentation in Confluence wiki and Swagger specifications',
+        'Transact integration technical debt support manual and automated regression testing',
+        'Testing fast follower post release items',
+        'Fix and maintain jmeter performance scripts for local and remote execution',
+        'Contribute to maintenance and development of api service automation framework in Java/Springboot',
+        'Participate in code reviews with dev and test teams',
+        'Maintain documentation in Confluence wiki',
         'Collaborate with Dev, Engineering teams and business stakeholders on regression strategy',
+        'Leverage Microsoft Copilot to accelerate development and maintenance of automated regression and code reviews',
       ],
     },
     {

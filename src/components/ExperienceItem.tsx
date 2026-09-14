@@ -20,11 +20,11 @@ export function ExperienceItem({ item }: { item: { company: string; position: st
           {item.employmentType}
         </div>
       )}
-      <ul className="mt-3 space-y-1 text-black dark:text-[#d4d4d4]">
+      <ul className="mt-3 space-y-2 text-black dark:text-[#d4d4d4]">
         {item.bullets.map((b, i) => (
-          <li key={i} className="flex gap-3">
-            <span className="shrink-0 mt-1 text-[#005a9e] dark:text-[#569cd6]">•</span>
-            <span className="text-sm">{b}</span>
+          <li key={i} className="flex items-start gap-3">
+            <span className="mt-0.5 shrink-0 leading-none text-[#005a9e] dark:text-[#569cd6]">•</span>
+            <span className="text-sm leading-relaxed">{b}</span>
           </li>
         ))}
       </ul>
