@@ -9,7 +9,7 @@ export function iconButtonClasses() {
 }
 
 export function closeButtonClasses() {
-  return 'ml-auto rounded-full p-2 text-2xl leading-none text-black transition hover:bg-[#e5f1fb] focus:outline-none focus:ring-2 focus:ring-[#007acc] dark:text-[#9d9d9d] dark:hover:bg-[#3e3e42] dark:hover:text-[#d4d4d4]'
+  return 'ml-auto flex h-10 w-10 items-center justify-center rounded-full bg-white text-2xl leading-none text-black transition hover:bg-[#e5f1fb] focus:outline-none focus:ring-2 focus:ring-[#007acc] dark:bg-[#2d2d30] dark:text-[#9d9d9d] dark:hover:bg-[#3e3e42] dark:hover:text-[#d4d4d4]'
 }
 
 export function experienceCardClasses() {
